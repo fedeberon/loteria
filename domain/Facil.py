@@ -1,14 +1,24 @@
+import names
+
+from domain.EspacioPrivado import EspacioPrivado
 from domain.Juego import Juego
 
 
 class Facil(Juego):
-    def __init__(self, nombre, dificultad, tiempo, puntaje):
-        self.__dificultad = dificultad
-        self.__tiempo = tiempo
-        self.__puntaje = puntaje
-        super().__init__(nombre)
+
+    def __init__(self):
+        self.__nombre = names.get_full_name()
+
+    def ingresarEspacios(self, espacio_publico):
+        super().__espacioPrivado = [EspacioPrivado(1), EspacioPrivado(2)]
+        super().__espacioPublico = espacio_publico
+
+    @property
+    def cantidadDeEspacios(self):
+        return len(self.__espacio_privado)
+
+    def getEspacios(self):
+        return self.__espacio_privado
 
     def __str__(self):
-        return super().__str__() + " - Nivel Facil"
-
-
+        return self._nombre + " - Nivel Facil"

@@ -3,18 +3,15 @@ from abc import ABC
 
 class Espacio(ABC):
 
-    __ubicacion: int
+    __lugar: int
+    __valor: int
 
-    ## Constructor de la clase Espacio
-    def __init__(self, ubicacion):
-        self.__ubicacion = ubicacion
+    def __init__(self, lugar, valor):
+        self.__lugar = lugar
+        self.__valor = valor
 
-    ## Getters y Setters de la clase Espacio
-    def getUbicacion(self):
-        return self.__ubicacion
+    def setValor(self, valor):
+            super().__valor = valor
 
-    def setUbicacion(self, ubicacion):
-        self.__ubicacion = ubicacion
-
-    def __str__(self):
-        return "[UBICACION]: " + str(self.__ubicacion)
+    def setLugar(self, lugar):
+        super().__lugar = lugar

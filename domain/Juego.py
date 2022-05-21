@@ -1,12 +1,15 @@
-class Juego:
-    def __init__(self, nombre):
-        self.__nombre = nombre
+from abc import abstractmethod, ABC
 
-    def getNombre(self):
-        return self.__nombre
 
-    def setNombre(self, nombre):
-        self.__nombre = nombre
+class Juego(ABC):
+    __nombre: str
+    __espacioPublico: list
+    __espacioPrivado: list
 
-    def __str__(self):
-        return self.__nombre
+    @abstractmethod
+    def cantidadDeEspacios(self):
+        pass
+
+    @abstractmethod
+    def ingresarEspacios(self, espacios):
+        pass
