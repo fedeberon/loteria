@@ -1,27 +1,27 @@
-from domain.Dificil import Dificil
 from domain.EspacioPublico import EspacioPublico
-from domain.Facil import Facil
+from factory import Factory
 
-
-def crearPartida(nivel):
-    if nivel == "facil":
-        return Facil()
-    elif nivel == "medio":
-        return "medio"
-    elif nivel == "dificil":
-        return Dificil()
-    else:
-        return "error"
-
-
+# Iniciamos el juego.
 print("Bienvenido al juego de la vida!")
+
+# Pedimos el nivel de juego al jugador.
 nivel = input("Ingrese el nivel de juego [dificil - facil]: ")
 
-juego = crearPartida(nivel)
+# Creamos la instancia de la clase Factory que se encarga de definir la logica del nivel de juego.
+factory = Factory(nivel)
+
+# Obtenemos la instancia de la clase según el nivel ingresado por el usuario.
+juego = factory.crearPartida(nivel)
+
+# Ingresamos los espacios públicos propuestos por el jugador.
+# TODO Falta tomar los datos de Jugador
 juego.ingresarEspacios([EspacioPublico(1, 1), EspacioPublico(2, 2)])
-cantidadDeEspaciosACompletar = len(juego.getEspacios())
 
-espaciosIngresados = input(f"Ingrese {cantidadDeEspaciosACompletar} numeros")
+# Obtenemos la cantidad de espacios ingresados por el jugador.
+cantidadDeEspaciosACompletar = len(juego.cantidadDeEspacios)
 
+# Preguntamos al Jugador los números que desea ingresar.
+espaciosIngresados = input(f"Ingrese {cantidadDeEspaciosACompletar} números")
 
+# Mostramos todos los datos de juego
 print(juego)

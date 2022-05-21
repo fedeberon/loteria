@@ -1,7 +1,7 @@
 from domain import Juego
 from domain.Dificil import Dificil
 from domain.Facil import Facil
-
+import logging
 
 class Factory:
     __nivel: Juego
@@ -9,12 +9,11 @@ class Factory:
     def __init__(self, nivel):
         self.__nivel = nivel
 
-    def crearPartida(self):
-        if self.__nivel == "facil":
+    def crearPartida(nivel):
+        if nivel == "facil":
             return Facil()
-        elif self.__nivel == "medio":
-            return "medio"
-        elif self.__nivel == "dificil":
+        elif nivel == "dificil":
             return Dificil()
         else:
-            return "error"
+            logging.info('Se ingresó un nivel no valido %s', nivel)
+            raise ValueError("El nivel de juego propuesto no existe. Lo siento ! :(")
