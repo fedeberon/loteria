@@ -5,14 +5,14 @@ from domain.Juego import Juego
 
 
 class Dificil(Juego):
-    __espacio_privado = [EspacioPrivado(1), EspacioPrivado(2), EspacioPrivado(3), EspacioPrivado(4), EspacioPrivado(5)]
-    __espacio_publico = None
 
-    def cantidadDeEspacios(self):
-        pass
-
-    def ingresarEspacios(self, espacios):
-        pass
+    def ingresarEspacios(self, espacio_publico):
+        super().__espacioPrivado = [EspacioPrivado(1),
+                                    EspacioPrivado(2),
+                                    EspacioPrivado(3),
+                                    EspacioPrivado(4),
+                                    EspacioPrivado(5)]
+        super().__espacioPublico = espacio_publico
 
     def __init__(self):
         self._nombre = names.get_full_name()

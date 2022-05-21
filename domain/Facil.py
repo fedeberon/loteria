@@ -13,12 +13,5 @@ class Facil(Juego):
         super().__espacioPrivado = [EspacioPrivado(1), EspacioPrivado(2)]
         super().__espacioPublico = espacio_publico
 
-    @property
-    def cantidadDeEspacios(self):
-        return len(self.__espacio_privado)
-
-    def getEspacios(self):
-        return self.__espacio_privado
-
     def __str__(self):
         return self._nombre + " - Nivel Facil"

@@ -6,9 +6,9 @@ class Juego(ABC):
     __espacioPublico: list
     __espacioPrivado: list
 
-    @abstractmethod
+    @property
     def cantidadDeEspacios(self):
-        pass
+        return len(self.__espacio_privado)
 
     @abstractmethod
     def ingresarEspacios(self, espacios):
