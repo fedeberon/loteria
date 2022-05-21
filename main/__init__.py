@@ -7,11 +7,8 @@ print("Bienvenido al juego de la vida!")
 # Pedimos el nivel de juego al jugador.
 nivel = input("Ingrese el nivel de juego [dificil - facil]: ")
 
-# Creamos la instancia de la clase Factory que se encarga de definir la logica del nivel de juego.
-factory = Factory(nivel)
-
 # Obtenemos la instancia de la clase según el nivel ingresado por el usuario.
-juego = factory.crearPartida(nivel)
+juego = Factory.crearPartida(nivel)
 
 # Ingresamos los espacios públicos propuestos por el jugador.
 # TODO Falta tomar los datos de Jugador

@@ -1,14 +1,13 @@
-from domain import Juego
 from domain.Dificil import Dificil
-from domain.Facil import Facil
 import logging
 
+from domain.Dificil import Dificil
+from domain.Facil import Facil
+
+
 class Factory:
-    __nivel: Juego
 
-    def __init__(self, nivel):
-        self.__nivel = nivel
-
+    @staticmethod
     def crearPartida(nivel):
         if nivel == "facil":
             return Facil()
