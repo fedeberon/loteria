@@ -27,3 +27,7 @@ class Dificil(Juego):
         return self.nombre + " - Nivel Dificil" \
                + " - Números Ingresados " + self.getDatosIngresados() \
                + " - Números Propuestos por el Juego " + self.getDatosPropuestos()
+
+
+
+
